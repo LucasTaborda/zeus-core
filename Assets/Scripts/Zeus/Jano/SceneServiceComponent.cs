@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZeusCore.Jano
 {
-    public class SceneManager : MonoBehaviour
+    public class SceneServiceComponent : MonoBehaviour
     {
         public LoadingDisplay loadingView;
         public SceneService sceneService;

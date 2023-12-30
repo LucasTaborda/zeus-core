@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZeusCore.Euterpe
 {
-    public class SoundComponent : MonoBehaviour
+    public class SoundServiceComponent : MonoBehaviour
     {
         [SerializeField] private SoundModel _soundModel;
         public int channelCount;

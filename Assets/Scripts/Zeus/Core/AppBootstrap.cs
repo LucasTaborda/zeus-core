@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZeusCore
 {
-    public class AppInit : MonoBehaviour
+    public class AppBootstrap : MonoBehaviour
     {
 
         private void Awake()

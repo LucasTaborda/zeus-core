@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZeusCore.Cronos
 {
-    public class UpdateComponent : MonoBehaviour
+    public class UpdateServiceComponent : MonoBehaviour
     {
         public UpdateService updateService;
         public bool active = true;

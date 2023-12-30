@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZeusCore
 {
-    public class GameManager : MonoBehaviour
+    public class GameServiceComponent : MonoBehaviour
     {
         [SerializeField] private int _mainMenuId;
 

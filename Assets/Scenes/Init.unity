@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 66077516}
   - component: {fileID: 66077517}
   m_Layer: 0
-  m_Name: GameManager (Zeus)
+  m_Name: Game Manager (Zeus)
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 832881d9586ef461f86a09dc1599c143, type: 3}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 201926630}
   - component: {fileID: 201926632}
   m_Layer: 0
-  m_Name: App Init
+  m_Name: App Bootstrap
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 7f4e703a2501c44b195b344a85fbf9b6, type: 3}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 287489071}
   - component: {fileID: 287489070}
   m_Layer: 0
-  m_Name: SoundManager (Euterpe)
+  m_Name: Sound Manager (Euterpe)
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 5501f46fef404429fb337346d0d3fe03, type: 3}
   m_NavMeshLayer: 0
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 362278700}
   - component: {fileID: 362278701}
   m_Layer: 0
-  m_Name: SaveManager (Mnemosyne)
+  m_Name: Save Manager (Mnemosyne)
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 79f544f1e3b7943e0a1f87b96abb805b, type: 3}
   m_NavMeshLayer: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 867000700}
   - component: {fileID: 867000701}
   m_Layer: 0
-  m_Name: SceneManager (Jano)
+  m_Name: Scene Manager (Jano)
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 5e5e2e0b1478e4a7989a1b49f5285184, type: 3}
   m_NavMeshLayer: 0
@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 2078842679}
   - component: {fileID: 2078842680}
   m_Layer: 0
-  m_Name: UpdateManager (Cronos)
+  m_Name: Update Manager (Cronos)
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 10817dbf7df954928a4741779c7e4dbf, type: 3}
   m_NavMeshLayer: 0
