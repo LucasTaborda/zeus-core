@@ -1,8 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using ZeusCore.Jano;
 using ZeusCore.Cronos;
+using ZeusCore.Mnemosyne;
+using System.Collections.Generic;
 
 namespace ZeusCore
 {
@@ -10,18 +11,29 @@ namespace ZeusCore
     {
         private SceneService _sceneService;
         private UpdateService _updateService;
+        private SaveService _saveService;
         private int _mainMenuId;
+        private MonoBehaviour _coroutiner;
         public enum State { Starting, MainMenu, Paused, Playing, Loading, VideoCinematic, InGameCinematic }
         public State state;
         public bool IsReady { get; private set; }
 
+        public delegate void LoadGameEvent(Dictionary<string, string> dataCollection);
+        public delegate void SaveGameEvent();
+
+        public event LoadGameEvent OnGameLoaded;
+        public event SaveGameEvent OnGameSaved;
+
+
         public GameService(int mainMenuId, MonoBehaviour coroutiner)
         {
             _mainMenuId = mainMenuId;
+            _coroutiner = coroutiner;
             state = State.Starting;
 
-            coroutiner.StartCoroutine(GetServices());
+            _coroutiner.StartCoroutine(GetServices());
         }
+
 
         private IEnumerator GetServices()
         {
@@ -31,6 +43,10 @@ namespace ZeusCore
 
             yield return new WaitUntil(() => Locator.ServiceExists<UpdateService>());
             _updateService = Locator.GetService<UpdateService>();
+
+            yield return new WaitUntil(() => Locator.ServiceExists<SaveService>());
+            _saveService = Locator.GetService<SaveService>();
+
             IsReady = true;
         }
 
@@ -55,6 +71,7 @@ namespace ZeusCore
             _updateService.active = false;
         }
 
+
         public void ResumeGame()
         {
             state = State.Playing;
@@ -77,13 +94,52 @@ namespace ZeusCore
         }
 
 
-        public void StartGame(int scene)
+        public void StartNewGame()
         {
-            _sceneService.LoadScene(scene);
+
         }
 
 
-        public void QuitGame()
+        public void LoadGame(string[] keys)
+        {
+            _coroutiner.StartCoroutine(LoadGameCoroutine(keys));
+        }
+
+
+        private IEnumerator LoadGameCoroutine(string[] keys)
+        {
+            yield return null;
+
+            Dictionary<string, string> dataLoaded = new();
+
+            foreach (var key in keys)
+            {
+                dataLoaded[key] = _saveService.LoadData(key);
+            }
+
+            OnGameLoaded?.Invoke(dataLoaded);
+        }
+
+
+        public void SaveGame(Dictionary<string, string> dataCollection)
+        {
+            _coroutiner.StartCoroutine(SaveGameCoroutine(dataCollection));
+        }
+
+
+        private IEnumerator SaveGameCoroutine(Dictionary<string, string> dataCollection)
+        {
+            yield return null;
+
+            foreach (var data in dataCollection)
+            {
+                _saveService.SaveData(data.Key, data.Value);
+            }
+            OnGameSaved?.Invoke();
+        }
+
+
+        public void QuitGameApp()
         {
             Application.Quit();
         }

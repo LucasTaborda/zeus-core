@@ -18,13 +18,15 @@ namespace ZeusCore
         }
 
 
-        private IEnumerator StartApplication() //TODO: for de ServiceComponent abstractos
+        private IEnumerator StartApplication()
         {
             yield return new WaitUntil(() => Locator.ServiceExists<Jano.SceneService>());
 
             yield return new WaitUntil(() => Locator.ServiceExists<Cronos.UpdateService>());
 
             yield return new WaitUntil(() => Locator.ServiceExists<Euterpe.SoundService>());
+
+            yield return new WaitUntil(() => Locator.ServiceExists<Mnemosyne.SaveService>());
 
             yield return new WaitUntil(() => Locator.ServiceExists<GameService>());
 
@@ -33,7 +35,7 @@ namespace ZeusCore
 
             yield return new WaitUntil(()=> gameService.IsReady);
 
-            gameService.GoToMainMenu();
+            gameService.StartGameApp();
         }
 
 
