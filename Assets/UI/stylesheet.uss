@@ -1,0 +1,47 @@
+.main-menu-button {
+    border-left-color: rgb(217, 217, 217);
+    border-right-color: rgb(217, 217, 217);
+    border-top-color: rgb(217, 217, 217);
+    border-bottom-color: rgb(217, 217, 217);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.78);
+    margin-bottom: 5px;
+    transition-duration: 0.3s;
+    -unity-font: url('project://database/Assets/FORCED%20SQUARE.ttf?fileID=12800000&guid=2ec17301ac9fa4033a6645293110fccb&type=3#FORCED SQUARE');
+    -unity-font-style: normal;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    font-size: 15px;
+    -unity-font-definition: initial;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0);
+}
+
+.main-menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+    color: rgb(27, 27, 27);
+    -unity-font-style: normal;
+}
+
+.load-row-text {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.main-menu-button:active {
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0);
+    background-color: rgba(149, 148, 148, 0.72);
+}
